@@ -1,5 +1,6 @@
 [all]
 192.168.56.51
+192.168.56.52
 
 [web_servers]
 worker1 ansible_host=192.168.56.51

@@ -1,0 +1,21 @@
+---
+- name: Play - software installations
+  hosts: worker1
+  gather_facts: true
+  become: true
+  
+  tasks:
+    - name: task - update cache
+      apt:
+        update_cache: yes
+     
+    - name: task - install apache package
+      apt:
+        name: apache2
+        state: latest
+      when: ansible_distribution in ["Ubuntu"]
+
+    - name: tsak - print something out"
+      debug:
+        msg:
+         - " Remote host OS is: {{ ansible_distribution }}"
